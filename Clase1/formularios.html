@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <form action="#" id="formulario-entrada">
+        <div>
+            <label for="nombre">Ingrese su nombre: </label>
+            <input id="nombre" name="nombre" type="text" value="Francisco1">
+        </div>
+
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" value="40" />
+        </div>
+
+        <div>
+            <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+            <input id="fecha-nacimiento" type="date" name="fecha-nacimiento" value="2024-04-01">
+        </div>
+        
+        <div>
+            <label for="clave">Contraseña: </label>
+            <input type="password" id="clave" name="clave" value="1234" />
+        </div>
+
+        <div>
+            <label>Estilo de fuente:</label>
+            <input type="radio" id="negrita" name="estilo_fuente" value="bold" />
+            <label for="negrita"><strong>Negrita</strong></label>
+            <input type="radio" id="normal" name="estilo_fuente" value="normal" />
+            <label for="normal">Normal</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="acepto" name="acepto" />
+            <label for="acepto">Acepto los términos y condiciones</label>
+        </div>
+        
+        <div>
+            <label for="comentario">Comentario: </label>
+            <textarea id="comentario" name="comentario" rows="4" cols="30">Esto es un texto</textarea>
+        </div>
+        <div>
+
+        </div>
+        <label for="bandas">Bandas: </label>
+        <select id="bandas" name="bandas">
+            <option value="almendras">Imagine Dragons</option>
+            <option value="queso">The Weeknd</option>
+            <option value="hummus">Twenty One Pilots</option>
+        </select>
+    
+        <input type="submit" value="Enviar" />
+    </form>
+    
+</body>
+</html>
