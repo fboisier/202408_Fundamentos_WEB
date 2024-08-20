@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 500px;
+            background-color: silver;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-around;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .col {
+            width: 220px;
+            padding: 10px;
+            background-color: salmon;
+            display: inline-flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <h3>Estrella1</h3>
+            <p>Mundo estrella día río noche tierra.</p>
+        </div>
+        <div class="col">
+            <h3>Estrella2</h3>
+            <p>Mundo estrella día río noche tierra.</p>
+        </div>
+        <div class="col">
+            <h3>Estrella3</h3>
+            <p>Mundo estrella día río noche tierra</p>
+        </div>
+    </div>
+</body>
+
+</html>
