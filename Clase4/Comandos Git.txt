@@ -1,0 +1,38 @@
+Comandos para iniciar en una carpeta GIT. 
+Asegurar que estan en la carpeta correcta en el terminal pwd
+
+
+1.- git init
+2.- git add .
+3.- git commit -m “tu comentario acá en las comillas”
+4.- ir GitHub y crear un repositorio nuevo.
+5.- copiar los comandos:
+git remote add origin https://github.com/tuusuario/turepo
+git branch -M main
+git push -u origin main
+
+
+Para actualizar:
+1.- git add .
+2.-git commit -m “comentario”
+3.- git push
+
+
+comandos propios:
+git  config --global alias.s "status -s -b"
+git config --global alias.lg "log --oneline --decorate --all --graph"
+
+git reset --soft HEAD^    //  quita el ultimo commit y deja los archivos en el escenario. Deja todo como si no se hubiera ejecutado el commit.   Si algun archivo tiene nuevas modificaciones, dirá que tiene modificacion pendientes en el escenario y al mismo tiempo puede tambien estar en el escenario. Solo que uno de los cambios no está aun en el escenario. 
+ 
+git reset --soft <numerocommit>  // quita todos los commit que existen hasta llegar al numero commit indicado. Deja los archivos en el stage.  
+ 
+
+ 
+git  reset --hard <numerocommit>  // quita todos los commit hasta ese commit indicado PERO ELIMINA TODOS LOS ARCHIVOS QUE ERAN PARTE DE ESOS COMIT. Es decir este comando nos deja tal como dejamos todo, al momento de hacer ese commit. Sin los archivos nuevos. 
+ 
+git reflog      // muestra un detalle completo de todo lo realizado en GIT. Permite por ejemplo ir al pasado (o furuo en caso de haber eliminado commits) para volver a un estado en aprticular.
+git  reset --mixed <numerocommit>  // quita todos los commit hasta ese punto indicado y ademas deja los archivos fuera del stage.  Los cambios de los commit quitados siguen en nuestra carpeta. No se eliminan.
+
+
+Si hacen git reset y luego commit. 
+git push --force 
