@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'letra_mano';
+    src: url('southland.ttf') format('truetype');
+}
+
+h1 {
+    font-family: "letra_mano";
+    font-size: 100px;
+}
