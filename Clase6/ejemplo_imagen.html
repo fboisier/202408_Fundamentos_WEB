@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo del IMAGEN</title>
+    <style>
+        img{
+            width: 500px;
+            border-radius: 30px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <img 
+        src="img/logo1.png" 
+        alt="logo" 
+        onmouseover="alternarImagen(this, 'img/logo2.png')" 
+        onmouseout="alternarImagen(this, 'img/logo1.png')"
+    >
+
+    <img
+        src="img/logo1.png"
+        alt="logo"
+        srcset="img/logo2.png"
+        onmouseover="alternarImagenDos(this)"
+        onmouseout="alternarImagenDos(this)"
+    >
+
+    <script>
+
+        function alternarImagen(elemento, imagen){
+            elemento.src = imagen;
+        }
+
+        function alternarImagenDos(elemento){
+            var respaldo = elemento.src;
+            var nueva = elemento.srcset;
+            
+            elemento.src = nueva;
+            elemento.srcset = respaldo;
+        }
+
+    </script>
+</body>
+</html>

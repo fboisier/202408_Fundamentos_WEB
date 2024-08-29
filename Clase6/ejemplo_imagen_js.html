@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo del IMAGEN</title>
+    <style>
+        img{
+            width: 500px;
+            border-radius: 30px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <img
+        id="imgUno"
+        src="img/logo1.png" 
+        alt="logo" 
+    >
+
+    <script>
+        var imgUno = document.querySelector("#imgUno");
+
+        imgUno.addEventListener("mouseover", function(){
+            this.src = "img/logo2.png";
+        })
+
+        imgUno.addEventListener("mouseout", function(){
+            this.src = "img/logo1.png";
+        })
+
+        imgUno.addEventListener("click", function(){
+            alert("Hiciste CLICK")
+        })
+
+    </script>
+</body>
+</html>

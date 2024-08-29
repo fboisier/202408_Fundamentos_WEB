@@ -4,3 +4,4 @@
 * [Clase 3 - CSS - Flex](https://drive.google.com/drive/folders/1FMb6fJ4BhcAYwDnL4PwxuOGRthpBwrLT?usp=drive_link)
 * [Clase 4 - GIT - Bootstrap](https://drive.google.com/drive/folders/1-sdhpX1KHSEtZshkcXim1-TExdr0DHTW?usp=drive_link)
 * [Clase 5 - JS](https://drive.google.com/drive/folders/1RNWcylaz8K6zlMHttAuRpC_miA1X74Ha?usp=drive_link)
+* [Clase 6 - JS - DOM](https://drive.google.com/drive/folders/1PZGlhxZAfs52QS66iH5iXjjbcSt52Gpy?usp=drive_link)

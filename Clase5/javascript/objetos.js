@@ -29,3 +29,9 @@ var arregloPersonas = [persona, persona1]
 for (var i = 0; i < arregloPersonas.length; i++){
     console.log(arregloPersonas[i].nombre)
 }
+
+console.log("----FOR OF----")
+for(var persona of arregloPersonas){
+    console.log(persona.nombre);
+    console.log(persona.edad);
+}

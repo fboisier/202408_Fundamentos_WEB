@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas</title>
+    <style>
+
+        main{
+            background-color: gainsboro;
+            padding: 30px;
+            border-radius: 20px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        main h3{
+            padding: 0px 10px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid rgb(164, 160, 160);
+            border-radius: 20px;
+            padding: 30px;
+            background-color: aliceblue;
+            margin: 5px 5px;
+        }
+
+        .btnContador{
+            padding: 5px 50px;
+            border-radius: 5px;
+            border: 1px solid blue;
+            background-color: blue;
+            color: white;
+            margin-top: 20px;
+        }
+        .flex{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .doble{
+            flex: 2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="tarjeta">
+            <h3>Tarjeta 1</h3>
+            <div class="flex">
+                <div>
+                    <span>Contador: </span><span class="contador">0</span>
+                </div>
+                <button class="btnContador">Sumar!</button>
+            </div>
+        </div>
+        <div class="tarjeta doble">
+            <h3>Tarjeta 2</h3>
+            <div class="flex">
+                <div>
+                    <span>Contador: </span><span class="contador">1</span>
+                </div>
+                <button class="btnContador">Sumar!</button>
+            </div>
+        </div>
+        <div class="tarjeta">
+            <h3>Tarjeta 3</h3>
+            <div class="flex">
+                <div>
+                    <span>Contador: </span><span class="contador">2</span>
+                </div>
+                <button class="btnContador">Sumar!</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        var botones = document.querySelectorAll(".btnContador");
+        for (var boton of botones){
+            boton.addEventListener("click", function(){
+                var divFlex = this.parentElement
+                var spanContador = divFlex.querySelector(".contador")
+                var contador = parseInt(spanContador.innerText);
+                spanContador.innerText = contador + 1;
+            })
+        }
+
+    </script>
+</body>
+</html>

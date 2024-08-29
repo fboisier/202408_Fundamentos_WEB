@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            border: 3px solid gray;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="saludar()">Titulo 1</h1>
+    <h1 onclick="saludarConParametros('Francisco')">Titulo Con Parametros</h1>
+
+    <h1 onclick="saludaConThis(this)">Pancho Boisier</h1>
+    
+    <h1 onclick="editar(this)">Esto es el valor inicial del HTML</h1>
+
+    <h1 onmouseover="alternar(this, 'entrar')" onmouseout="alternar(this, 'salir')">Hola Mundo</h1>
+
+    <script src="ejemplo_click.js"></script>
+
+</body>
+</html>
