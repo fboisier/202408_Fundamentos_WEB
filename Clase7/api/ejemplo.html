@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo</h1>
+    <img scr="" >
+
+    <script>
+
+        var titulo = document.querySelector("h1");
+        titulo.addEventListener("click", function(){
+            async function getCoderData() {
+                var response = await fetch("https://pokeapi.co/api/v2/pokemon/1");
+                var coderData = await response.json();
+                console.log(coderData.sprites.back_default)
+
+                document.querySelector("img").src = coderData.sprites.back_default;
+
+                console.log(coderData.name);
+                console.log(coderData.moves);
+                // {}  se accede con  . 
+                // []  se recorre con for o se accede al INDICE NUMERO.   [0]
+                for (var movimiento of coderData.moves){
+                    console.log(movimiento.move.name)
+                }
+            }
+            getCoderData();
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clima Actual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f7f7f7;
+        }
+
+        .weather-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 300px;
+            border-radius: 5px;
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .weather-card img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .weather-info {
+            margin: 10px 0;
+        }
+
+        .city {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .description {
+            color: #777;
+        }
+
+        .temp {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+        }
+
+        input[type="button"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0a7ecc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Ingrese ciudad..." />
+        <input type="button" value="Buscar" onclick="getWeather()" />
+    </div>
+
+    <div id="weatherCardsContainer"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        async function getData(url){
+            
+            try {
+                const response = await fetch(url);
+                const weatherData = await response.json();
+                return weatherData;
+            } catch (error) {
+                alert('Error al obtener el clima: ' + error.message);
+                return null;
+            }
+        }
+
+        async function getDataAxios(url){
+            try {
+                const weatherData = await axios.get(url);
+                console.log(weatherData);
+                return weatherData.data;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
+        async function getWeather() {
+            const apiKey = 'e92d1169cb066caf5d176bc676f8e00b'; // Reemplaza con tu API key
+            const city = document.getElementById('cityInput').value;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
+
+            weatherData = await getDataAxios(url);
+            displayWeatherCard(weatherData);
+        }
+
+        function displayWeatherCard(data) {
+            const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+            const weatherCardHTML = `
+                                    <div class="weather-card">
+                                        <div class="city">${data.name}</div>
+                                        <div class="weather-info">
+                                        <img src="${iconUrl}" alt="${data.weather[0].description}" />
+                                        <div class="description">${data.weather[0].description}</div>
+                                        <div class="temp">${data.main.temp}°C</div>
+                                        </div>
+                                    </div>
+                                    `;
+
+            const container = document.getElementById('weatherCardsContainer');
+            container.innerHTML += weatherCardHTML; // Agrega una nueva tarjeta
+        }
+    </script>
+
+</body>
+
+</html>
